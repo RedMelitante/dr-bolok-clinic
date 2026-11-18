@@ -52,7 +52,7 @@ src/
   layouts/BaseLayout.astro   <head>/SEO, header, footer
   components/        Header, Footer, PageTitle, FaqList, StatCards
   pages/             one file per route (+ [slug] templates for services and posts)
-  scripts/           book-picker.ts (clinic availability), inquiry-form.ts
+  scripts/           book-picker.ts (clinic availability checker)
   styles/global.css  global rules from the design's <helmet> + hover/toggle states
 design/              original Claude Design source files (reference only, not built)
 ```
@@ -66,13 +66,13 @@ To change clinic hours, phone numbers, FAQs, service copy or articles, edit `src
 
 ## Configuration
 
-Copy `.env.example` to `.env` (or set these in your host's build settings):
+Copy `.env.example` to `.env` (or set it in your host's build settings):
 
 - `SITE_URL` — the site's absolute URL (e.g. `https://www.example.com`). Enables canonical
   and absolute Open Graph URLs.
-- `PUBLIC_FORM_ENDPOINT` — optional URL that receives the Book and Contact inquiry forms as a
-  `POST` (Formspree, Basin, Getform, etc.). When empty, the forms behave like the design and
-  only show the thank-you message.
+
+The site has no forms: as in the design, visitors book or ask questions by calling or texting
+the clinic secretary.
 
 ## Still to confirm with the client
 
@@ -82,4 +82,3 @@ Carried over from the design hand-off notes:
   says "Hospital affiliation"; the design had a placeholder).
 - The "231+ Safe Observation" stat.
 - Licence/source for the 3 photos taken from the old site.
-- Where inquiry form submissions should go (`PUBLIC_FORM_ENDPOINT`).
