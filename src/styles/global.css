@@ -1,0 +1,86 @@
+/*
+ * Global styles for the Dr. Vira Bolok site.
+ * The base rules below are copied verbatim from the design's shared <helmet>
+ * block (design/*.dc.html). Component-level styling lives inline in the
+ * markup, exactly as in the design.
+ */
+
+/* ---- Design tokens (reference; the markup uses these values inline) ---- */
+:root {
+  --dv-ink: #17324D;          /* body text */
+  --dv-ink-soft: #3F5368;     /* paragraph text */
+  --dv-ink-muted: #4A5D70;    /* secondary text */
+  --dv-navy: #123049;         /* footer / dark panels */
+  --dv-teal: #0D7A80;         /* primary brand / buttons */
+  --dv-teal-dark: #0A5F64;    /* link hover / text on tint */
+  --dv-teal-tint: #E6F4F3;
+  --dv-mint-bg: #F2F9F8;      /* hero backgrounds */
+  --dv-mist-bg: #F7FBFB;      /* alternate sections */
+  --dv-coral: #B4492F;        /* eyebrows */
+  --dv-coral-tint: #FFF1EA;
+  --dv-peach: #F6A88A;        /* focus ring / accents */
+  --dv-blue: #1F5F8F;
+  --dv-blue-tint: #EAF3FB;
+  --dv-gold: #7A5600;
+  --dv-gold-tint: #FFF6D9;
+  --dv-border: #E1ECEE;
+  --dv-font: 'Nunito', system-ui, sans-serif;
+}
+
+body{margin:0}
+a{color:#0D7A80}a:hover{color:#0A5F64}
+.dv-menu{display:none}
+.dv-sticky{display:none}
+.dv-stickypad{height:0}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+details[open] .dv-chev{transform:rotate(180deg)}
+:focus-visible{outline:3px solid #F6A88A;outline-offset:2px}
+@media (max-width:860px){
+.dv-navlinks{display:none !important}
+.dv-hcta{display:none !important}
+.dv-menu{display:inline-flex !important}
+.dv-sticky{display:flex !important;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.dv-stickypad{height:78px}
+}
+
+/* ---- Small phones: keep the header bar within the viewport ----
+ * (The design's 390px previews clip ~26px of the header with overflow-x:hidden;
+ * this compacts it instead so nothing is cut off or scrolls sideways.) */
+@media (max-width:480px){
+.dv-hbar{padding:12px 16px !important;gap:10px !important}
+.dv-hlogo{height:38px !important}
+.dv-hbook{padding:0 16px !important}
+}
+@media (max-width:374px){
+.dv-hlogo{height:32px !important}
+.dv-hbook{padding:0 14px !important;font-size:14px !important}
+}
+
+/* ---- Interactive states (the design drives these with component state) ---- */
+
+/* Header: services dropdown + mobile menu items */
+.dv-dd-item{background:transparent;color:#17324D;transition:background 0.15s, color 0.15s}
+.dv-dd-item:hover,.dv-dd-item:focus{background:#E6F4F3;color:#0A6F75}
+.dv-chev-btn{transition:transform 0.2s}
+[aria-expanded="true"] > .dv-chev-btn{transform:rotate(180deg)}
+[hidden]{display:none !important}
+[data-dv-menu-toggle][aria-expanded="true"] [data-dv-icon-open],
+[data-dv-menu-toggle][aria-expanded="false"] [data-dv-icon-close]{display:none}
+
+/* Home: service icon tiles */
+.dv-svc{background:#FFFFFF;border:1px solid transparent;box-shadow:none;transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s}
+.dv-svc:hover,.dv-svc:focus{border-color:#EEF3F5;box-shadow:0 14px 36px rgba(23, 50, 77, 0.10);transform:translateY(-3px)}
+
+/* Blog: topic filter chips */
+.dv-chip{background:#FFFFFF;color:#17324D;border:2px solid #D5E5E7}
+.dv-chip[aria-pressed="true"]{background:#0D7A80;color:#FFFFFF;border:2px solid #0D7A80}
+
+/* Book: availability result */
+.dv-result-ok{background:#E6F4F3;color:#0A5F64}
+.dv-result-no{background:#FFF1EA;color:#8C3F2B}
+
+@media (prefers-reduced-motion: reduce){
+  .dv-svc,.dv-dd-item,.dv-chev,.dv-chev-btn{transition:none !important}
+  .dv-svc:hover,.dv-svc:focus{transform:none}
+}

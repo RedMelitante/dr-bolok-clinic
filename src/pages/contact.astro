@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { clinics } from '../data/site';
+
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || undefined;
+---
+<BaseLayout
+  title="Contact — Dr. Vira Bolok, MD"
+  description="Call or text Dr. Vira’s clinic secretary at Capitol University Medical Center (0927 428 6149) or Maria Reyna–Xavier University Hospital (0935 289 4650) in Cagayan de Oro."
+  active="contact"
+>
+<section style="background: #F2F9F8; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 320px; height: 320px; border-radius: 50%; background: #E1F1F0; right: -80px; top: -120px"></div>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) 24px; display: flex; flex-direction: column; gap: 16px">
+    <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Contact</span>
+    <h1 style="margin: 0; font-size: clamp(36px, 5vw, 56px); line-height: 1.08; font-weight: 800">Get in touch with Dr. Vira’s clinic</h1>
+    <p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); color: #3F5368; max-width: 660px">The fastest way to reach us is to call or text the clinic secretary. She can help with scheduling or pass your question along to Dr. Vira.</p>
+  </div>
+</section>
+
+<section style="padding: clamp(56px, 7vw, 88px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
+      {clinics.map((c) => (
+        <article style="display: flex; flex-direction: column; gap: 18px; padding: 28px; border-radius: 28px; border: 1px solid #DCEAEC; box-shadow: 0 10px 30px rgba(23, 50, 77, 0.05)">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <h2 style="margin: 0; font-size: 22px; font-weight: 800; line-height: 1.25">{c.name}</h2>
+            <span style="color: #4A5D70">{c.address}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border-radius: 18px; background: #F2F9F8">
+            {c.rows.map((r) => (
+              <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span style="font-weight: 800">{r.days}</span><span style="color: #3F5368">{r.time}</span></div>
+            ))}
+          </div>
+          <a href={c.tel} style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 10px 20px; border-radius: 20px; background: #0D7A80; color: #FFFFFF; text-decoration: none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+            <span style="display: flex; flex-direction: column; line-height: 1.25"><span style="font-size: 13px; font-weight: 700; color: #DDF2F1">Tap to call</span><span style="font-size: 22px; font-weight: 800">{c.phone}</span></span>
+          </a>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+            <a href={c.sms} style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 999px; border: 2px solid #CFE3E5; color: #17324D; font-weight: 800; text-decoration: none">Text</a>
+            <a href={c.map} style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 999px; border: 2px solid #CFE3E5; color: #17324D; font-weight: 800; text-decoration: none">Open in Maps</a>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 22px 24px; border-radius: 22px; background: #EAF3FB"><span style="font-weight: 800">J.R. Borja General Hospital</span><span style="font-size: 15px; color: #3F5368">Medical Specialist IV, Pediatrics</span><a href="https://www.google.com/maps/search/?api=1&query=J.R.+Borja+General+Hospital+Cagayan+de+Oro" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; font-weight: 800; color: #1F5F8F">Open in Maps</a></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 22px 24px; border-radius: 22px; background: #EAF3FB"><span style="font-weight: 800">Madonna and Child Medical Center</span><span style="font-size: 15px; color: #3F5368">Hospital affiliation</span><a href="https://www.google.com/maps/search/?api=1&query=Madonna+and+Child+Medical+Center+Cagayan+de+Oro" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; font-weight: 800; color: #1F5F8F">Open in Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #F7FBFB; padding: clamp(56px, 7vw, 88px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px">
+    <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; font-weight: 800">Send a message</h2>
+      <p style="margin: 0; color: #3F5368">For general questions only. This form doesn’t reserve an appointment. To book, please call or text the clinic.</p>
+    </div>
+    <form data-dv-form method="post" action={formEndpoint} style="flex: 2 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 32px; border-radius: 32px; background: #FFFFFF; border: 1px solid #E1ECEE">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Parent’s name
+        <input type="text" name="name" autocomplete="name" required style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Mobile number
+        <input type="tel" name="phone" autocomplete="tel" required placeholder="09XX XXX XXXX" style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D">
+      </label>
+      <label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Your message
+        <textarea name="message" rows="5" required style="padding: 14px 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D; resize: vertical"></textarea>
+      </label>
+      <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+        <button type="submit" style="min-height: 56px; padding: 0 30px; border-radius: 999px; border: none; background: #0D7A80; color: #FFFFFF; font: inherit; font-weight: 800; font-size: 17px; cursor: pointer">Send message</button>
+        <span role="status" data-dv-form-ok hidden style="font-weight: 800; color: #0A5F64">Thank you! The clinic will get back to you.</span>
+          <span role="alert" data-dv-form-error hidden style="font-weight: 800; color: #8C3F2B">Sorry, your message could not be sent. Please call or text the clinic instead.</span>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  import '../scripts/inquiry-form';
+</script>
+</BaseLayout>

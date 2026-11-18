@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blog — Dr. Vira Bolok, MD</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0D7A80}a:hover{color:#0A5F64}
+.dv-menu{display:none}
+.dv-sticky{display:none}
+.dv-stickypad{height:0}
+:focus-visible{outline:3px solid #F6A88A;outline-offset:2px}
+@media (max-width:860px){
+.dv-navlinks{display:none !important}
+.dv-hcta{display:none !important}
+.dv-menu{display:inline-flex !important}
+.dv-sticky{display:flex !important;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.dv-stickypad{height:78px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #17324D; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<dc-import name="Header" active="blog" hint-size="100%,75px"></dc-import>
+
+<main>
+<!-- HERO -->
+<section style="background: #F2F9F8; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 320px; height: 320px; border-radius: 50%; background: #E1F1F0; right: -80px; top: -120px"></div>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) 24px; display: flex; flex-direction: column; gap: 16px">
+    <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">News &amp; articles</span>
+    <h1 style="margin: 0; font-size: clamp(36px, 5vw, 56px); line-height: 1.08; font-weight: 800; max-width: 760px">Health tips for parents, from Dr. Vira’s clinic</h1>
+    <p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); color: #3F5368; max-width: 640px">Simple, trustworthy guides on newborn care, vaccines, growth and everyday childhood illnesses.</p>
+    <div role="group" aria-label="Filter by topic" style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px">
+      <sc-for list="{{chips}}" as="c" hint-placeholder-count="3">
+        <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="{{c.style}}">{{c.label}}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- POSTS -->
+<section style="padding: clamp(56px, 7vw, 88px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 28px">
+    <sc-for list="{{posts}}" as="p" hint-placeholder-count="3">
+      <a href="{{p.href}}" style="display: flex; flex-wrap: wrap; border-radius: 32px; overflow: hidden; background: #FFFFFF; border: 1px solid #E1ECEE; text-decoration: none; color: #17324D; box-shadow: 0 10px 30px rgba(23, 50, 77, 0.05)">
+        <img src="{{p.img}}" alt="{{p.alt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: {{p.pos}}; display: block">
+        <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 44px); justify-content: center">
+          <span style="{{p.tagStyle}}">{{p.category}}</span>
+          <span style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 800; line-height: 1.2">{{p.title}}</span>
+          <span style="font-size: 17px; color: #4A5D70">{{p.excerpt}}</span>
+          <span style="font-size: 15px; color: #4A5D70; font-weight: 700">{{p.date}} · {{p.read}}</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 800; color: #0D7A80">Read article <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+        </div>
+      </a>
+    </sc-for>
+    <sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+      <p style="margin: 0; padding: 24px; border-radius: 20px; background: #F7FBFB; color: #4A5D70; font-weight: 700">No articles in this topic yet. Check back soon.</p>
+    </sc-if>
+  </div>
+</section>
+
+<!-- QUESTIONS + FACEBOOK -->
+<section style="padding: 0 0 clamp(64px, 8vw, 96px)">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px; border-radius: 32px; background: #0D7A80; color: #FFFFFF">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 800">Have a question about your child?</h2>
+      <p style="margin: 0; color: #E3F4F3">Call Dr. Vira’s clinic. The secretary can help with scheduling or pass your question along.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <a href="tel:+639274286149" style="display: inline-flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 6px 20px; border-radius: 18px; background: #FFFFFF; color: #123049; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 800; color: #0A5F64">CUMC</span><span style="font-size: 18px; font-weight: 800">0927 428 6149</span></a>
+        <a href="tel:+639352894650" style="display: inline-flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 6px 20px; border-radius: 18px; background: #FFFFFF; color: #123049; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 800; color: #0A5F64">Maria Reyna–XU</span><span style="font-size: 18px; font-weight: 800">0935 289 4650</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3700}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { topic: 'All' };
+  }
+  renderVals() {
+    const B = (p) => p;
+    const tag = (bg, fg) => 'align-self: flex-start; padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 800; background: ' + bg + '; color: ' + fg + ';';
+    const all = [
+      { title: 'Signs Your Child’s Fever Needs a Doctor’s Visit', href: 'ArticleFever.dc.html', category: 'Childhood illnesses', tagStyle: tag('#FFF6D9', '#7A5600'),
+        excerpt: 'Most fevers are just a normal part of your child’s body fighting off an infection. Here’s how to tell when it’s safe to monitor at home — and when it’s time to bring them in.',
+        date: 'August 12, 2026', read: '2 min read', img: 'images/fever-mom-child.webp', alt: 'A mother checking her son’s temperature as he rests in bed', pos: 'center 45%' },
+      { title: 'A Simple Guide to Your Baby’s Vaccination Schedule', href: 'Article.dc.html', category: 'Vaccines', tagStyle: tag('#EAF3FB', '#1F5F8F'),
+        excerpt: 'With so many shots recommended at different ages, it’s easy for parents to feel a little lost. Here’s a clear breakdown of what to expect and why each vaccine matters.',
+        date: 'August 12, 2026', read: '2 min read', img: 'images/baby-injection-n.webp', alt: 'A baby receiving a vaccine while held by a parent', pos: '30% 40%' },
+      { title: 'Developmental Milestones: What to Watch for in Your Child’s First Year', href: 'ArticleMilestones.dc.html', category: 'Growth & development', tagStyle: tag('#FFF1EA', '#8C3F2B'),
+        excerpt: 'Every child grows at their own pace, but knowing what’s typical during the first year can help you feel more confident along the way. Here’s a simple guide to what to expect month by month.',
+        date: 'August 12, 2026', read: '2 min read', img: 'images/mom-baby-play-n.webp', alt: 'A mother playing with stacking toys with her baby', pos: 'center 45%' }
+    ];
+    const topic = this.state.topic;
+    const posts = topic === 'All' ? all : all.filter((p) => p.category === topic);
+    const chips = ['All', 'Vaccines', 'Growth & development', 'Childhood illnesses'].map((label) => {
+      const on = label === topic;
+      return {
+        label, pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ topic: label }),
+        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 800; cursor: pointer; ' +
+          (on ? 'background: #0D7A80; color: #FFFFFF; border: 2px solid #0D7A80;' : 'background: #FFFFFF; color: #17324D; border: 2px solid #D5E5E7;')
+      };
+    });
+    return { posts, chips, empty: posts.length === 0 };
+  }
+}
+</script>
+</body>
+</html>

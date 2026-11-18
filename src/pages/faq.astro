@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+import FaqList from '../components/FaqList.astro';
+import { allFaqs } from '../data/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<BaseLayout
+  title="FAQ — Dr. Vira Bolok, MD"
+  description="Answers to common questions parents ask before visiting Dr. Vira Bolok: appointments and walk-ins, what to bring, newborn visits, vaccinations, NICU follow-up and clinic locations."
+  active="faq"
+  jsonLd={jsonLd}
+>
+<PageTitle title="FAQ" />
+
+<!-- QUESTIONS -->
+<section style="padding: clamp(56px, 7vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+    <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Frequently Asked Questions</span>
+      <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; font-weight: 800">Common Questions from Parents</h2>
+      <p style="margin: 0; color: #3F5368">A few things parents often ask before bringing their child in for a visit with Dr. Vira. Don’t see your question here? Feel free to reach out to the clinic directly.</p>
+      <img loading="lazy" src="/images/vira-exam-baby.webp" alt="Dr. Vira checking a baby with a stethoscope as the mother holds her" style="width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; object-position: center 30%; border-radius: 28px; display: block">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <a href="tel:+639274286149" style="display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 8px 16px; border-radius: 18px; background: #0D7A80; color: #FFFFFF; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 700; color: #DDF2F1">CUMC</span><span style="font-size: 17px; font-weight: 800">0927 428 6149</span></a>
+        <a href="tel:+639352894650" style="display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 8px 16px; border-radius: 18px; background: #E6F4F3; color: #0A5F64; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 700">Maria Reyna</span><span style="font-size: 17px; font-weight: 800">0935 289 4650</span></a>
+      </div>
+    </div>
+    <div style="flex: 2 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+      <FaqList faqs={allFaqs} />
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OFFER -->
+<section style="padding: 0 0 clamp(56px, 7vw, 96px)">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+    <div style="position: relative; overflow: hidden; border-radius: 36px; background: #0D7A80; color: #FFFFFF; padding: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+      <div aria-hidden="true" style="position: absolute; width: 240px; height: 240px; border-radius: 50%; background: #13878D; right: -60px; top: -90px"></div>
+      <div style="position: relative; flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #CDEFEC">Services Offer</span>
+        <h2 style="margin: 0; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.15; font-weight: 800">Complete Pediatric &amp; Neonatal Care</h2>
+        <p style="margin: 0; font-size: 18px; color: #E3F4F3">From newborn screening to childhood immunizations, Dr. Vira provides comprehensive care to support your child’s healthy growth at every stage.</p>
+      </div>
+      <a href="/book/" style="position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #FFFFFF; color: #0A5F64; font-weight: 800; text-decoration: none">Book an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST NEWS -->
+<section style="background: #F7FBFB; padding: clamp(56px, 7vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Latest News</span>
+        <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; font-weight: 800">News &amp; Article</h2>
+      </div>
+      <a href="/blog/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; font-weight: 800; color: #0D7A80; text-decoration: none">All articles →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+      <a href="/blog/baby-vaccination-schedule/" style="display: flex; flex-direction: column; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E1ECEE; text-decoration: none; color: #17324D">
+        <img loading="lazy" src="/images/baby-injection-n.webp" alt="A baby receiving a vaccine while held by a parent" style="width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: 30% 40%; display: block">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px 24px 26px">
+          <span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #EAF3FB; color: #1F5F8F; font-size: 13px; font-weight: 800">Vaccines</span>
+          <span style="font-size: 20px; font-weight: 800; line-height: 1.3">A Simple Guide to Your Baby’s Vaccination Schedule</span>
+          <span style="font-size: 15px; color: #4A5D70">With so many shots recommended at different ages, it’s easy for parents to feel a little lost. Here’s a clear breakdown of what to expect and why each vaccine matters.</span>
+          <span style="font-size: 14px; color: #4A5D70; font-weight: 700">August 12, 2026 · 2 min read</span>
+        </div>
+      </a>
+      <a href="/blog/developmental-milestones-first-year/" style="display: flex; flex-direction: column; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E1ECEE; text-decoration: none; color: #17324D">
+        <img loading="lazy" src="/images/mom-baby-play-n.webp" alt="A mother playing with stacking toys with her baby" style="width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: center 45%; display: block">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px 24px 26px">
+          <span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #FFF1EA; color: #8C3F2B; font-size: 13px; font-weight: 800">Growth &amp; development</span>
+          <span style="font-size: 20px; font-weight: 800; line-height: 1.3">Developmental Milestones: What to Watch for in Your Child’s First Year</span>
+          <span style="font-size: 15px; color: #4A5D70">Every child grows at their own pace, but knowing what’s typical during the first year can help you feel more confident along the way. Here’s a simple guide to what to expect month by month.</span>
+          <span style="font-size: 14px; color: #4A5D70; font-weight: 700">August 12, 2026 · 2 min read</span>
+        </div>
+      </a>
+      <a href="/blog/when-fever-needs-a-doctor/" style="display: flex; flex-direction: column; border-radius: 28px; overflow: hidden; background: #FFFFFF; border: 1px solid #E1ECEE; text-decoration: none; color: #17324D">
+        <img loading="lazy" src="/images/fever-mom-child.webp" alt="A mother checking her son’s temperature as he rests in bed" style="width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: center 45%; display: block">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px 24px 26px">
+          <span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #FFF6D9; color: #7A5600; font-size: 13px; font-weight: 800">Childhood illnesses</span>
+          <span style="font-size: 20px; font-weight: 800; line-height: 1.3">Signs Your Child’s Fever Needs a Doctor’s Visit</span>
+          <span style="font-size: 15px; color: #4A5D70">Most fevers are just a normal part of your child’s body fighting off an infection. Here’s how to tell when it’s safe to monitor at home — and when it’s time to bring them in.</span>
+          <span style="font-size: 14px; color: #4A5D70; font-weight: 700">August 12, 2026 · 2 min read</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</BaseLayout>

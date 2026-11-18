@@ -1,0 +1,25 @@
+{
+  "name": "dr-bolok-clinic",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for Dr. Viraliza June Abejuela Bolok, MD — Pediatrics & Neonatology, Cagayan de Oro.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "dependencies": {
+    "astro": "^7.4.12"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^22.20.5",
+    "typescript": "^6.0.3"
+  }
+}

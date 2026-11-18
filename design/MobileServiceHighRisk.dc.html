@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>High-risk follow-up — mobile preview</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0D7A80}a:hover{color:#0A5F64}
+.dv-menu{display:none}
+.dv-sticky{display:none}
+.dv-stickypad{height:0}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+details[open] .dv-chev{transform:rotate(180deg)}
+:focus-visible{outline:3px solid #F6A88A;outline-offset:2px}
+@media (max-width:860px){
+.dv-navlinks{display:none !important}
+.dv-hcta{display:none !important}
+.dv-menu{display:inline-flex !important}
+.dv-sticky{display:flex !important;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.dv-stickypad{height:78px}
+}
+</style>
+</helmet>
+<div style="width: 390px; overflow-x: hidden; background: #FFFFFF; font-family: 'Nunito', system-ui, sans-serif; color: #17324D">
+  <dc-import name="ServiceHighRisk" hint-size="390px,8200px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":8200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
