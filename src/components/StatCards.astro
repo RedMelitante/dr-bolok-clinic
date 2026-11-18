@@ -1,0 +1,38 @@
+---
+/**
+ * The four "3D" stat cards shared by the Home and About pages.
+ * Illustrations are copied verbatim from the design.
+ */
+interface Props {
+  /** "home" = Home stats row, "about" = About sidebar column */
+  variant?: 'home' | 'about';
+}
+const { variant = 'home' } = Astro.props;
+const home = variant === 'home';
+
+const stats = [
+  { value: '12+', label: 'Years in medical practice', bg: '#E6F4F3', color: '#0A5F64' },
+  { value: '5+', label: 'Years as a board-certified pediatrician-neonatologist', bg: '#FFF1EA', color: '#B4492F' },
+  { value: '4', label: 'Hospital &amp; clinic affiliations', bg: '#EAF3FB', color: '#1F5F8F' },
+  { value: '231+', label: 'Safe Observation', bg: '#FFF6D9', color: '#7A5600' },
+];
+
+const art = [
+  '<svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="i3dSkin" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#FFE3CF"></stop><stop offset="1" stop-color="#E5A27E"></stop></radialGradient><linearGradient id="i3dCoat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#CFE0E7"></stop></linearGradient><linearGradient id="i3dHair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6A4434"></stop><stop offset="1" stop-color="#2E1D17"></stop></linearGradient></defs><ellipse cx="32" cy="59.5" rx="17" ry="3.2" fill="#123049" opacity="0.13"></ellipse><path d="M12 58c0-11 9-18 20-18s20 7 20 18z" fill="url(#i3dCoat)" stroke="#B9CFD8" stroke-width="1"></path><path d="M26 41l6 9 6-9z" fill="#0D7A80"></path><path d="M20 46c0 6 3 9 7 9" fill="none" stroke="#1F5F8F" stroke-width="2.2" stroke-linecap="round"></path><circle cx="27.5" cy="55" r="2.4" fill="#A9BECA" stroke="#1F5F8F" stroke-width="1.2"></circle><circle cx="32" cy="25" r="12" fill="url(#i3dSkin)"></circle><path d="M20 25c-.6-8.5 5-14 12-14s12.6 5.5 12 14c-2.6-4.4-6.8-6.6-12-6.6S22.6 20.6 20 25z" fill="url(#i3dHair)"></path><ellipse cx="27" cy="21" rx="3.4" ry="1.8" fill="#FFFFFF" opacity="0.35"></ellipse></svg>',
+  '<svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="i3dTube" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4FD6CD"></stop><stop offset="1" stop-color="#0B6A70"></stop></linearGradient><radialGradient id="i3dMetal" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.5" stop-color="#C9D6DD"></stop><stop offset="1" stop-color="#7A909D"></stop></radialGradient></defs><ellipse cx="32" cy="59.5" rx="17" ry="3.2" fill="#123049" opacity="0.13"></ellipse><path d="M18 9v13a12 12 0 0 0 24 0V9" fill="none" stroke="url(#i3dTube)" stroke-width="5" stroke-linecap="round"></path><path d="M30 34v6a10 10 0 0 0 20 0v-3" fill="none" stroke="url(#i3dTube)" stroke-width="5" stroke-linecap="round"></path><path d="M19.6 11v10" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.4" stroke-linecap="round"></path><rect x="14" y="5" width="8" height="5.5" rx="2.7" fill="url(#i3dMetal)" stroke="#6F8794" stroke-width="0.8"></rect><rect x="38" y="5" width="8" height="5.5" rx="2.7" fill="url(#i3dMetal)" stroke="#6F8794" stroke-width="0.8"></rect><circle cx="50" cy="31" r="7.6" fill="url(#i3dMetal)" stroke="#5E7684" stroke-width="1"></circle><circle cx="50" cy="31" r="3.3" fill="#0D7A80"></circle><circle cx="48" cy="28.6" r="1.6" fill="#FFFFFF" opacity="0.8"></circle></svg>',
+  '<svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="i3dFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#D6E5EB"></stop></linearGradient><linearGradient id="i3dSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9CFD8"></stop><stop offset="1" stop-color="#93AEBA"></stop></linearGradient><linearGradient id="i3dCross" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9A80"></stop><stop offset="1" stop-color="#D9502F"></stop></linearGradient></defs><ellipse cx="32" cy="59.5" rx="17" ry="3.2" fill="#123049" opacity="0.13"></ellipse><path d="M50 23.5l7 3.5v29l-7 1.5z" fill="url(#i3dSide)"></path><path d="M10 25l20-10 20 8.5V58H10z" fill="url(#i3dFront)" stroke="#B3C8D1" stroke-width="1"></path><path d="M8 26l22-11 27 12" fill="none" stroke="#1F5F8F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><rect x="26" y="21" width="8" height="18" rx="2" fill="url(#i3dCross)"></rect><rect x="21" y="26" width="18" height="8" rx="2" fill="url(#i3dCross)"></rect><rect x="14" y="43" width="6" height="6" rx="1.5" fill="#7FB7E0"></rect><rect x="40" y="43" width="6" height="6" rx="1.5" fill="#7FB7E0"></rect><path d="M25 58V48a5 5 0 0 1 10 0v10z" fill="#0D7A80"></path></svg>',
+  '<svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="i3dBoard" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4FD6CD"></stop><stop offset="1" stop-color="#1F5F8F"></stop></linearGradient><linearGradient id="i3dPaper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#E4EFF3"></stop></linearGradient><radialGradient id="i3dClip" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.5" stop-color="#C9D6DD"></stop><stop offset="1" stop-color="#7A909D"></stop></radialGradient></defs><ellipse cx="32" cy="59.5" rx="17" ry="3.2" fill="#123049" opacity="0.13"></ellipse><rect x="12" y="9" width="40" height="48" rx="7" fill="url(#i3dBoard)"></rect><path d="M15 12.5h11" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"></path><rect x="17" y="15" width="30" height="37" rx="3.5" fill="url(#i3dPaper)"></rect><rect x="23" y="5" width="18" height="9" rx="3.5" fill="url(#i3dClip)" stroke="#6F8794" stroke-width="0.8"></rect><path d="M21 22h14M21 46h22" stroke="#BCCFD6" stroke-width="2" stroke-linecap="round"></path><path d="M20 34h6l3-7 5 13 3-6h7" fill="none" stroke="#E0553A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+]
+
+const cardStyle = (bg: string) => home
+  ? `padding: 28px; border-radius: 28px; background: ${bg}; display: flex; flex-direction: column; gap: 4px`
+  : `padding: 26px; border-radius: 26px; background: ${bg}; display: flex; flex-direction: column; gap: 2px`;
+const iconBox = 'width: 74px; height: 74px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 10px 24px rgba(23, 50, 77, 0.10); display: flex; align-items: center; justify-content: center; margin-bottom: 14px';
+---
+{stats.map((s, i) => (
+  <div style={cardStyle(s.bg)}>
+    <span style={iconBox} set:html={art[i]} />
+    <span style={`font-size: ${home ? '48px' : '44px'}; font-weight: 800; line-height: 1; color: ${s.color}`}>{s.value}</span>
+    <span style={home ? 'font-size: 17px; font-weight: 700' : 'font-weight: 700'} set:html={s.label} />
+  </div>
+))}

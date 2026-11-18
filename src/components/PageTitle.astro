@@ -1,0 +1,15 @@
+---
+import { routes } from '../data/site';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<section style="background: #123049; color: #FFFFFF; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: #1E4A63; right: -80px; top: -150px"></div>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) 24px; display: flex; flex-direction: column; gap: 8px">
+    <h1 style="margin: 0; font-size: clamp(34px, 4.6vw, 52px); line-height: 1.1; font-weight: 800">{title}</h1>
+    <nav aria-label="Breadcrumb" style="font-size: 15px; font-weight: 700; color: #B9D3DA; display: flex; gap: 8px; align-items: center"><a href={routes.home} style="color: #9FDAD6; text-decoration: none">Home</a><span aria-hidden="true">›</span><span aria-current="page" style="color: #FFFFFF">{title}</span></nav>
+  </div>
+</section>

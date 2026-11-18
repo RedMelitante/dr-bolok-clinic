@@ -1,0 +1,14 @@
+---
+import type { Faq } from '../data/site';
+
+interface Props {
+  faqs: Faq[];
+}
+const { faqs } = Astro.props;
+---
+{faqs.map((f) => (
+  <details style="border-radius: 20px; border: 1px solid #DCEAEC; background: #FFFFFF">
+    <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; min-height: 44px; font-weight: 800; font-size: 18px">{f.q}<svg class="dv-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; transition: transform 0.2s"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+    <p style="margin: 0; padding: 0 24px 22px; color: #3F5368">{f.a}</p>
+  </details>
+))}

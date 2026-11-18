@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+import StatCards from '../components/StatCards.astro';
+import FaqList from '../components/FaqList.astro';
+import { allFaqs, routes } from '../data/site';
+
+const services = [
+  { title: 'Newborn & Neonatal Care', href: routes.svcNewborn, desc: 'From routine newborn checkups to specialized care for premature and high-risk infants, Dr. Vira brings hospital-level neonatal expertise to every visit.', img: '/images/newborn-bassinet-n.webp', alt: 'A newborn resting in a hospital bassinet', pos: 'center 45%' },
+  { title: 'Growth & Development Monitoring', href: routes.svcWellBaby, desc: 'Regular checkups tracking your child’s growth, milestones, and overall development at every stage.', img: '/images/baby-blanket-n.webp', alt: 'A smiling baby lying on a soft white blanket', pos: 'center 50%' },
+  { title: 'Vaccination & Immunization', href: routes.svcVaccines, desc: 'Complete, up-to-date immunization schedules to protect your child against preventable childhood diseases.', img: '/images/girl-vaccine-n.webp', alt: 'A little girl smiling at the bandage on her arm after a vaccine', pos: 'center 35%' },
+];
+
+// TODO(client): confirm Dr. Vira's current role at Madonna and Child Medical Center.
+const creds = [
+  { t: 'Licensed physician', d: 'Physician Licensure Examination, 2014' },
+  { t: 'Board-certified Pediatrician', d: 'Philippine Pediatric Society' },
+  { t: 'Sub-specialty in Neonatology', d: 'Newborn and premature infant care, certified through the Philippine Pediatric Society' },
+  { t: 'Medical Specialist IV, Pediatrics', d: 'J.R. Borja General Hospital' },
+  { t: 'Consulting pediatrician', d: 'Capitol University Medical Center & Maria Reyna–Xavier University Hospital' },
+  { t: 'Madonna and Child Medical Center', d: 'Hospital affiliation' },
+];
+
+const places = [
+  { name: 'Capitol University Medical Center', detail: 'Room 206B, Gusa Highway · Clinic Mon, Tue, Thu, Fri 9 AM–12 PM' },
+  { name: 'Maria Reyna–Xavier University Hospital', detail: 'Room 547 · Clinic Tue & Thu 3–5 PM, Fri 1–5 PM' },
+  { name: 'J.R. Borja General Hospital', detail: 'Medical Specialist IV, Pediatrics' },
+  { name: 'Madonna and Child Medical Center', detail: 'Hospital affiliation' },
+];
+---
+<BaseLayout
+  title="About Dr. Vira — Dr. Vira Bolok, MD"
+  description="Meet Dr. Viraliza June Abejuela Bolok, MD — a board-certified pediatrician with a sub-specialty in neonatology, licensed since 2014 and caring for newborns and children across Cagayan de Oro."
+  active="about"
+  image="/images/vira-holding-baby.webp"
+>
+<PageTitle title="About" />
+
+<!-- HERO -->
+<section style="background: #F2F9F8; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 420px; height: 420px; border-radius: 50%; background: #E1F1F0; right: -120px; top: -140px"></div>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) 24px 0; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 48px">
+    <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; padding-bottom: clamp(40px, 6vw, 80px)">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">About Dr. Vira</span>
+      <h2 style="margin: 0; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.1; font-weight: 800">Trusted Newborn &amp; Child Care, Close to Home</h2>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 19px); color: #3F5368">Dr. Viraliza June Abejuela Bolok, MD has dedicated her career to the health and development of children — from their very first moments of life through their growing years. As a board-certified pediatrician with a sub-specialty in neonatology, she brings hospital-level expertise in newborn and high-risk infant care to every family she sees, paired with the attentiveness of a personal pediatrician.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 22px; background: #FFFFFF">
+          <span style="font-weight: 800; font-size: 17px">Newborn &amp; High-Risk Infant Care</span>
+          <span style="font-size: 15px; color: #4A5D70">Specialized training in neonatology means Dr. Vira is equipped to care for premature and high-risk newborns, not just routine checkups.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 22px; background: #FFFFFF">
+          <span style="font-weight: 800; font-size: 17px">Trusted Across Multiple Hospitals</span>
+          <span style="font-size: 15px; color: #4A5D70">Patients can see Dr. Vira at Capitol University Medical Center, Maria Reyna–Xavier University Hospital, or J.R. Borja General Hospital — whichever is most convenient.</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1 1 380px; min-width: 0; position: relative; align-self: center; padding-bottom: clamp(40px, 6vw, 80px)">
+      <div style="position: relative; max-width: 480px; margin: 0 auto; padding: 0 0 40px 40px">
+        <img src="/images/vira-holding-baby.webp" alt="Dr. Vira holding a baby" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: 40px 40px 40px 110px; border: 6px solid #FFFFFF; box-sizing: border-box; display: block; box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12)">
+        <div style="position: absolute; left: 0; bottom: 0; padding: 14px 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 14px 36px rgba(23, 50, 77, 0.14); display: flex; flex-direction: column; line-height: 1.3">
+          <span style="font-weight: 800; font-size: 17px">Dr. Viraliza June Bolok</span>
+          <span style="font-size: 14px; color: #4A5D70; font-weight: 700">Pediatrician &amp; Neonatologist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS + STATS -->
+<section style="padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px">
+    <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Credentials &amp; affiliations</span>
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Training you can trust</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+        {creds.map((c) => (
+          <li style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 18px; border: 1px solid #E1ECEE"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="display: flex; flex-direction: column"><span style="font-weight: 800">{c.t}</span><span style="font-size: 15px; color: #4A5D70">{c.d}</span></span></li>
+        ))}
+      </ul>
+    </div>
+    <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <StatCards variant="about" />
+    </div>
+  </div>
+</section>
+
+<!-- DEDICATED CARE + GALLERY -->
+<section style="background: #F7FBFB; padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Dedicated Care, Every Step of the Way</h2>
+      <p style="margin: 0; color: #3F5368">From your baby’s first checkup to routine childhood visits, Dr. Vira combines specialized neonatal training with genuine attentiveness, so parents always know their child is in capable hands.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+      <img loading="lazy" src="/images/vira-exam-baby.webp" alt="Dr. Vira checking a baby with a stethoscope" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%; border-radius: 26px; display: block">
+      <img loading="lazy" src="/images/vira-nicu.webp" alt="Dr. Vira holding a newborn in the NICU" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%; border-radius: 26px; display: block">
+      <img loading="lazy" src="/images/vira-desk-family.webp" alt="Dr. Vira at her clinic desk with a family and their baby" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; border-radius: 26px; display: block">
+      <img loading="lazy" src="/images/vira-holding-baby.webp" alt="Dr. Vira holding a baby" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%; border-radius: 26px; display: block">
+    </div>
+  </div>
+</section>
+
+<!-- CLINICS -->
+<section style="padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
+        <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Multiple Convenient Clinics</h2>
+        <p style="margin: 0; color: #3F5368">See Dr. Vira at whichever hospital location fits your schedule best.</p>
+      </div>
+      <a href="/book/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; font-weight: 800; color: #0D7A80; text-decoration: none">See clinic schedules <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+      {places.map((p) => (
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 24px; border: 1px solid #DCEAEC">
+          <span style="font-size: 18px; font-weight: 800; line-height: 1.3">{p.name}</span>
+          <span style="font-size: 15px; color: #4A5D70">{p.detail}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background: #F7FBFB; padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Services</span>
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Newborn &amp; Child Care</h2>
+      <p style="margin: 0; color: #3F5368">Comprehensive care from birth through childhood, including checkups, vaccinations, and developmental monitoring.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+      {services.map((v) => (
+        <a href={v.href} style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+          <img loading="lazy" src={v.img} alt={v.alt} style={`width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: ${v.pos}; border-radius: 20px; display: block`}>
+          <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">{v.title}</span>
+          <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">{v.desc}</span>
+          <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Learn more <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+        </a>
+      ))}
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 28px; background: #123049; color: #FFFFFF">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25">Not sure which visit you need?</span>
+        <span style="font-size: 16px; color: #C6DCE2">Call the clinic secretary. She’ll help you choose the right appointment for your child.</span>
+        <a href="tel:+639274286149" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; color: #123049; font-weight: 800; text-decoration: none">Call 0927 428 6149</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 48px">
+    <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">FAQ</span>
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Common Questions from Parents</h2>
+      <p style="margin: 0; color: #3F5368">A few things parents often ask before bringing their child in for a visit with Dr. Vira. Don’t see your question here? Feel free to reach out to the clinic directly.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
+        <a href="/faq/" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 999px; border: 2px solid #0D7A80; color: #0D7A80; font-weight: 800; text-decoration: none">See all FAQs</a>
+        <a href="/contact/" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 999px; color: #0A5F64; font-weight: 800; text-decoration: none">Contact the clinic</a>
+      </div>
+    </div>
+    <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+      <FaqList faqs={allFaqs} />
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding: 0 0 clamp(64px, 8vw, 96px)">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+    <div style="position: relative; overflow: hidden; border-radius: 36px; background: #0D7A80; color: #FFFFFF; padding: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+      <div aria-hidden="true" style="position: absolute; width: 240px; height: 240px; border-radius: 50%; background: #13878D; right: -60px; top: -90px"></div>
+      <div style="position: relative; flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #CDEFEC">Services Offer</span>
+        <h2 style="margin: 0; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.15; font-weight: 800">Complete Pediatric &amp; Neonatal Care</h2>
+        <p style="margin: 0; font-size: 18px; color: #E3F4F3">From newborn screening to childhood immunizations, Dr. Vira provides comprehensive care to support your child’s healthy growth at every stage.</p>
+      </div>
+      <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="/book/" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #FFFFFF; color: #0A5F64; font-weight: 800; text-decoration: none">Book an Appointment</a>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>

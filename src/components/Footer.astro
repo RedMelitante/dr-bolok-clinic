@@ -1,0 +1,66 @@
+---
+import { routes, phones } from '../data/site';
+
+const linkStyle = 'color: #E6F1F3; text-decoration: none; font-size: 16px; padding: 4px 0';
+const year = 2026;
+---
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #DCEBEE">
+<footer style="background: #123049; padding: 64px 0 28px">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <img src="/images/logo-light.webp" alt="Dr. Vira" width="154" height="48" loading="lazy" style="height: 48px; width: auto; align-self: flex-start; display: block">
+          <span style="font-size: 14px; font-weight: 700; color: #B9D3DA">Dr. Viraliza June Abejuela Bolok, MD · Pediatrics &amp; Neonatology</span>
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C6DCE2">Board-certified pediatrician and neonatologist providing trusted newborn and child care across Cagayan de Oro.</p>
+      </div>
+      <nav aria-label="Footer pages" style="display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #9FDAD6">Pages</h2>
+        <a href={routes.home} style={linkStyle}>Home</a>
+        <a href={routes.about} style={linkStyle}>About Dr. Vira</a>
+        <a href={routes.book} style={linkStyle}>Book an Appointment</a>
+        <a href={routes.faq} style={linkStyle}>FAQ</a>
+        <a href={routes.blog} style={linkStyle}>Blog</a>
+        <a href={routes.contact} style={linkStyle}>Contact</a>
+      </nav>
+      <nav aria-label="Footer services" style="display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #9FDAD6">Services</h2>
+        <a href={routes.svcNewborn} style={linkStyle}>Newborn &amp; Neonatal Care</a>
+        <a href={routes.svcWellBaby} style={linkStyle}>Well-Baby &amp; Growth Monitoring</a>
+        <a href={routes.svcVaccines} style={linkStyle}>Child Vaccinations</a>
+        <a href={routes.svcIllnesses} style={linkStyle}>Common Childhood Illnesses</a>
+        <a href={routes.svcHighRisk} style={linkStyle}>High-Risk Infant Follow-up</a>
+      </nav>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0 0 2px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #9FDAD6">Clinics</h2>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-weight: 800; color: #FFFFFF; font-size: 16px">Capitol University Medical Center</span>
+          <span style="font-size: 14px; color: #C6DCE2">Room 206B · Mon, Tue, Thu, Fri · 9 AM–12 PM</span>
+          <a href={phones.cumc.tel} style="color: #FFD3C2; font-weight: 800; font-size: 16px; text-decoration: none; padding: 4px 0">{phones.cumc.display}</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-weight: 800; color: #FFFFFF; font-size: 16px">Maria Reyna–Xavier University Hospital</span>
+          <span style="font-size: 14px; color: #C6DCE2">Room 547 · Tue &amp; Thu 3–5 PM · Fri 1–5 PM</span>
+          <a href={phones.mrxu.tel} style="color: #FFD3C2; font-weight: 800; font-size: 16px; text-decoration: none; padding: 4px 0">{phones.mrxu.display}</a>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; border-top: 1px solid #24506A; font-size: 14px; color: #B9D3DA">
+      <span>© {year} Digital Services Master. All rights reserved.</span>
+      <a href={routes.contact} style="color: #B9D3DA">Contact the clinic</a>
+    </div>
+  </div>
+</footer>
+<div class="dv-stickypad"></div>
+<div class="dv-sticky" style="gap: 10px; padding: 12px 16px; background: #FFFFFF; border-top: 1px solid #DCE9EB; box-shadow: 0 -6px 20px rgba(18, 48, 73, 0.08)">
+  <a href={phones.cumc.tel} style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 999px; border: 2px solid #0D7A80; color: #0D7A80; font-weight: 800; font-size: 17px; text-decoration: none; background: #FFFFFF">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+    Call
+  </a>
+  <a href={routes.book} style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 999px; background: #0D7A80; color: #FFFFFF; font-weight: 800; font-size: 17px; text-decoration: none">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    Book
+  </a>
+</div>
+</div>

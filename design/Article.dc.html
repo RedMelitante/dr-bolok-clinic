@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Article — Dr. Vira Bolok, MD</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0D7A80}a:hover{color:#0A5F64}
+.dv-menu{display:none}
+.dv-sticky{display:none}
+.dv-stickypad{height:0}
+:focus-visible{outline:3px solid #F6A88A;outline-offset:2px}
+@media (max-width:860px){
+.dv-navlinks{display:none !important}
+.dv-hcta{display:none !important}
+.dv-menu{display:inline-flex !important}
+.dv-sticky{display:flex !important;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.dv-stickypad{height:78px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #17324D; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<dc-import name="Header" active="blog" hint-size="100%,75px"></dc-import>
+
+<main>
+<!-- ARTICLE HEADER -->
+<section style="background: #F2F9F8">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px 0; display: flex; flex-direction: column; gap: 20px">
+    <nav aria-label="Breadcrumb" style="font-size: 15px; font-weight: 700; color: #4A5D70; display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+      <a href="Main.dc.html" style="color: #0D7A80; text-decoration: none">Home</a><span aria-hidden="true">›</span>
+      <a href="Blog.dc.html" style="color: #0D7A80; text-decoration: none">Blog</a><span aria-hidden="true">›</span>
+      <span aria-current="page">{{p.category}}</span>
+    </nav>
+    <div style="max-width: 860px; display: flex; flex-direction: column; gap: 16px">
+      <span style="{{p.tagStyle}}">{{p.category}}</span>
+      <h1 style="margin: 0; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.12; font-weight: 800">{{p.title}}</h1>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; font-size: 15px; font-weight: 700; color: #4A5D70">
+        <span style="display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #CDE9E7; color: #0A5F64; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">QM</span><span>Queenelyn Mercado</span></span>
+        <span style="display: inline-flex; align-items: center; gap: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>{{p.date}}</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>{{p.read}}</span>
+      </div>
+    </div>
+    <img src="{{p.img}}" alt="{{p.alt}}" style="width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: {{p.pos}}; border-radius: 32px; display: block; margin-bottom: -60px; box-shadow: 0 20px 50px rgba(23, 50, 77, 0.12)">
+  </div>
+</section>
+
+<!-- BODY + SIDEBAR -->
+<section style="padding: 100px 0 clamp(64px, 8vw, 96px)">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+    <article style="flex: 999 1 560px; min-width: 0; max-width: 760px; display: flex; flex-direction: column; gap: 28px">
+      <p style="margin: 0; font-size: 20px; line-height: 1.65; color: #2C4259">{{p.lead}}</p>
+      <sc-for list="{{p.sections}}" as="sec" hint-placeholder-count="4">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <sc-if value="{{sec.hasH}}" hint-placeholder-val="{{ true }}">
+            <h2 style="margin: 0; font-size: 28px; line-height: 1.25; font-weight: 800">{{sec.h}}</h2>
+          </sc-if>
+          <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #3F5368">{{sec.p}}</p>
+          <sc-if value="{{sec.hasList}}" hint-placeholder-val="{{ false }}">
+            <ul style="margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+              <sc-for list="{{sec.list}}" as="li" hint-placeholder-count="5">
+                <li style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 18px; border-radius: 16px; background: #FFF6F1; font-size: 17px; line-height: 1.55"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B4492F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg><span>{{li}}</span></li>
+              </sc-for>
+            </ul>
+          </sc-if>
+          <sc-if value="{{sec.hasGallery}}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 10px">
+              <sc-for list="{{sec.gallery}}" as="g" hint-placeholder-count="2">
+                <img src="{{g.src}}" alt="{{g.alt}}" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: {{g.pos}}; border-radius: 22px; display: block">
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <a href="{{p.serviceHref}}" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border-radius: 24px; border: 1px solid #DCEAEC; text-decoration: none; color: #17324D">
+        <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Related service</span><span style="font-size: 20px; font-weight: 800">{{p.serviceTitle}}</span></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </article>
+
+    <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: 28px; background: #E6F4F3">
+        <h2 style="margin: 0; font-size: 21px; font-weight: 800">Have any questions?</h2>
+        <p style="margin: 0; font-size: 16px; color: #3F5368">Reach out to Dr. Vira’s clinic. We’re happy to help with scheduling or any questions about your child’s care.</p>
+        <a href="tel:+639274286149" style="display: flex; flex-direction: column; min-height: 60px; justify-content: center; padding: 8px 18px; border-radius: 18px; background: #0D7A80; color: #FFFFFF; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 700; color: #DDF2F1">CUMC</span><span style="font-size: 19px; font-weight: 800">0927 428 6149</span></a>
+        <a href="tel:+639352894650" style="display: flex; flex-direction: column; min-height: 60px; justify-content: center; padding: 8px 18px; border-radius: 18px; background: #FFFFFF; border: 2px solid #0D7A80; color: #0A5F64; text-decoration: none; line-height: 1.25"><span style="font-size: 13px; font-weight: 700">Maria Reyna–XU Hospital</span><span style="font-size: 19px; font-weight: 800">0935 289 4650</span></a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 26px; border-radius: 28px; border: 1px solid #E1ECEE">
+        <h2 style="margin: 0; font-size: 19px; font-weight: 800">More for parents</h2>
+        <sc-for list="{{others}}" as="o" hint-placeholder-count="2">
+          <a href="{{o.href}}" style="display: flex; gap: 14px; align-items: center; text-decoration: none; color: #17324D">
+            <img src="{{o.img}}" alt="" style="width: 76px; height: 76px; border-radius: 16px; object-fit: cover; flex-shrink: 0">
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 800; line-height: 1.3">{{o.title}}</span><span style="font-size: 14px; color: #4A5D70; font-weight: 700">{{o.date}}</span></span>
+          </a>
+        </sc-for>
+        <a href="Blog.dc.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 800; color: #0D7A80; text-decoration: none">All articles <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+      </div>
+      <a href="Book.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 999px; background: #123049; color: #FFFFFF; font-weight: 800; text-decoration: none">Book an Appointment</a>
+    </aside>
+  </div>
+</section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"post":{"editor":"enum","options":["vaccines","milestones","fever"],"default":"vaccines"},"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const B = (p) => p;
+    const tag = (bg, fg) => 'align-self: flex-start; padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 800; background: ' + bg + '; color: ' + fg + ';';
+    const P = {
+      vaccines: {
+        title: 'A Simple Guide to Your Baby’s Vaccination Schedule',
+        category: 'Vaccines', tagStyle: tag('#EAF3FB', '#1F5F8F'),
+        date: 'August 12, 2026', read: '2 min read', href: 'Article.dc.html',
+        img: 'images/baby-injection-n.webp', alt: 'A baby receiving a vaccine while held by a parent', pos: '30% 40%',
+        lead: 'Vaccinations are one of the most effective tools we have to protect children from serious, preventable diseases. But with so many shots recommended at different ages, it’s easy for parents to feel a little lost. Here’s a simple breakdown of what to expect.',
+        sections: [
+          { h: 'Why Vaccines Matter', p: 'Vaccines work by helping your child’s immune system recognize and fight off specific diseases before they ever get sick from them. Following the recommended schedule ensures your child is protected at the ages when they’re most vulnerable to certain illnesses.' },
+          { h: 'What to Expect at Each Stage', gallery: [{ src: 'images/vaccine-leg.webp', alt: 'A newborn receiving a vaccine in the thigh', pos: '60% center' }, { src: 'images/vaccine-arm.webp', alt: 'A baby receiving a vaccine in the upper arm', pos: '55% center' }], p: 'Your child’s vaccination schedule generally starts right after birth and continues through several checkups in their first two years, with booster shots at certain ages after that. Rather than memorizing every date yourself, Dr. Vira will review what’s due at each visit and let you know what’s coming up next.' },
+          { h: 'Common Questions Parents Ask', p: 'It’s normal to have questions — about side effects, about combining multiple vaccines in one visit, or about what to do if a dose was missed. Mild side effects like a low fever or soreness at the injection site are common and usually resolve within a day or two. If your child has missed a scheduled vaccine, a catch-up schedule can be planned to get back on track safely.' },
+          { h: 'Keeping Track', p: 'Dr. Vira keeps a record of your child’s immunization history at every visit, so you’ll always know exactly what’s been given and what’s next, no guesswork required.' },
+          { p: 'If it’s time for your child’s next vaccine, or if you’d like to go over their immunization history, we’re happy to help you stay on schedule.' }
+        ],
+        serviceTitle: 'Child Vaccinations & Immunization', serviceHref: 'ServiceVaccines.dc.html'
+      },
+      fever: {
+        title: 'Signs Your Child’s Fever Needs a Doctor’s Visit',
+        category: 'Childhood illnesses', tagStyle: tag('#FFF6D9', '#7A5600'),
+        date: 'August 12, 2026', read: '2 min read', href: 'ArticleFever.dc.html',
+        img: 'images/fever-mom-child.webp', alt: 'A mother checking her son’s temperature as he rests in bed', pos: 'center 45%',
+        lead: 'Few things worry parents more than a child with a fever. While most fevers are a normal sign that your child’s body is fighting off an infection, there are times when a fever calls for a doctor’s visit rather than home care. Here’s how to tell the difference.',
+        sections: [
+          { h: 'When Home Care Is Usually Enough', gallery: [{ src: 'images/fever-baby-1.webp', alt: 'A parent checking a baby’s temperature with a forehead thermometer', pos: '45% center' }, { src: 'images/fever-baby-2.webp', alt: 'A smiling baby having their temperature taken', pos: '45% center' }], p: 'For a mild fever without other concerning symptoms, home care, rest, fluids, and appropriate fever medication if needed, is often enough for the first day or two. Keep an eye on your child’s behavior: if they’re still drinking fluids, urinating normally, and acting mostly like themselves between fever spikes, it’s generally reasonable to monitor at home for a short time.' },
+          { h: 'When to Bring Your Child In', p: 'Some signs mean it’s time to schedule a visit rather than wait it out:', hasList: true, list: [
+            'Your child is under 3 months old and has any fever at all',
+            'The fever is high (39°C/102°F or above) and isn’t responding to fever medication',
+            'Your child seems unusually lethargic or is difficult to wake',
+            'There’s trouble breathing or persistent vomiting',
+            'Signs of dehydration appear, very few wet diapers, a dry mouth, or no tears when crying'
+          ] },
+          { h: 'Trust Your Instincts', p: 'You know your child best. Even if a fever doesn’t check every box above, if something feels off, it’s always reasonable to schedule a visit. It’s better to have a checkup that turns out to be unnecessary than to wait too long on something that needed attention.' },
+          { p: 'If your child is running a fever and you’re not sure what to do next, don’t hesitate to reach out, Dr. Vira’s clinic is here to help you figure out the right next step.' }
+        ],
+        serviceTitle: 'Common Childhood Illnesses', serviceHref: 'ServiceIllnesses.dc.html'
+      },
+      milestones: {
+        title: 'Developmental Milestones: What to Watch for in Your Child’s First Year',
+        category: 'Growth & development', tagStyle: tag('#FFF1EA', '#8C3F2B'),
+        date: 'August 12, 2026', read: '2 min read', href: 'ArticleMilestones.dc.html',
+        img: 'images/mom-baby-play-n.webp', alt: 'A mother playing with stacking toys with her baby', pos: 'center 45%',
+        lead: 'Every child grows at their own pace, but there are general milestones that give parents a helpful guide to what’s typical during the first year of life. Knowing what to look for can help you celebrate your baby’s progress, and know when it’s worth asking your pediatrician a few extra questions.',
+        sections: [
+          { h: 'The First Few Months', p: 'In the early months, most babies begin to lift their head during tummy time, track faces and objects with their eyes, and respond to familiar voices with coos or smiles. These small responses are early signs that your baby’s senses and muscles are developing as expected.' },
+          { h: 'Six to Nine Months', gallery: [{ src: 'images/baby-crawl.webp', alt: 'A baby crawling toward wooden toys', pos: '40% center' }, { src: 'images/baby-blocks.webp', alt: 'A baby sitting up and playing with wooden blocks', pos: '62% center' }], p: 'Around this stage, many babies start sitting without support, babbling with different sounds, and reaching for or grasping objects. Some begin experimenting with solid foods and showing more interest in the people and world around them.' },
+          { h: 'Nine to Twelve Months', p: 'By the end of the first year, many babies are pulling themselves up to stand, crawling or taking early steps, and may say a first word or two. Every baby reaches these points a little differently, some earlier, some later, and that’s usually completely normal.' },
+          { h: 'When to Bring It Up With Dr. Vira', p: 'Milestones are guides, not strict deadlines. If your baby seems significantly behind in several areas at once, or you simply have a nagging feeling something’s off, that’s worth mentioning at your next well-baby visit. Catching a delay early, even if it turns out to be nothing, is always the better path.' },
+          { p: 'Every well-baby visit is a chance to talk through your child’s growth and development, milestone by milestone. If you have questions or concerns, we’re here to help you make sense of them.' }
+        ],
+        serviceTitle: 'Well-Baby & Growth Monitoring', serviceHref: 'ServiceWellBaby.dc.html'
+      }
+    };
+    const key = P[this.props.post] ? this.props.post : 'vaccines';
+    const p = { ...P[key], sections: P[key].sections.map((x) => ({ ...x, hasH: !!x.h, hasGallery: !!x.gallery })) };
+    const others = Object.keys(P).filter((k) => k !== key).map((k) => ({ title: P[k].title, href: P[k].href, img: P[k].img, date: P[k].date }));
+    return { p, others };
+  }
+}
+</script>
+</body>
+</html>

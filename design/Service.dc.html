@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Service — Dr. Vira Bolok, MD</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0D7A80}a:hover{color:#0A5F64}
+.dv-menu{display:none}
+.dv-sticky{display:none}
+.dv-stickypad{height:0}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+details[open] .dv-chev{transform:rotate(180deg)}
+:focus-visible{outline:3px solid #F6A88A;outline-offset:2px}
+@media (max-width:860px){
+.dv-navlinks{display:none !important}
+.dv-hcta{display:none !important}
+.dv-menu{display:inline-flex !important}
+.dv-sticky{display:flex !important;position:fixed;left:0;right:0;bottom:0;z-index:50}
+.dv-stickypad{height:78px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #17324D; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<dc-import name="Header" active="services" hint-size="100%,75px"></dc-import>
+
+<main>
+<!-- HERO -->
+<section style="background: #F2F9F8; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 360px; height: 360px; border-radius: 50%; background: #E1F1F0; right: -100px; bottom: -160px"></div>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 28px 24px clamp(40px, 6vw, 72px); display: flex; flex-direction: column; gap: 28px">
+    <nav aria-label="Breadcrumb" style="font-size: 15px; font-weight: 700; color: #4A5D70; display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+      <a href="Main.dc.html" style="color: #0D7A80; text-decoration: none">Home</a><span aria-hidden="true">›</span>
+      <a href="Services.dc.html" style="color: #0D7A80; text-decoration: none">Services</a><span aria-hidden="true">›</span>
+      <span aria-current="page">{{s.title}}</span>
+    </nav>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #D5E9E8; font-size: 14px; font-weight: 800; color: #0A5F64">{{s.title}}</span>
+        <h1 style="margin: 0; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.1; font-weight: 800">{{s.headline}}</h1>
+        <p style="margin: 0; font-size: clamp(17px, 1.6vw, 19px); color: #3F5368; max-width: 580px">{{s.intro1}}</p>
+        <p style="margin: 0; font-size: 17px; color: #4A5D70; max-width: 580px">{{s.intro2}}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
+          <a href="Book.dc.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #0D7A80; color: #FFFFFF; font-weight: 800; font-size: 17px; text-decoration: none">{{s.bookLabel}}</a>
+          <a href="tel:+639274286149" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #FFFFFF; border: 2px solid #0D7A80; color: #0D7A80; font-weight: 800; font-size: 17px; text-decoration: none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+            Call the Clinic
+          </a>
+        </div>
+      </div>
+      <div style="flex: 1 1 380px; min-width: 0">
+        <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; align-items: end">
+          <img src="{{s.img1}}" alt="{{s.alt1}}" style="grid-column: span 3; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: {{s.pos1}}; border-radius: 40px 40px 40px 100px; border: 6px solid #FFFFFF; box-sizing: border-box; display: block; box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12)">
+          <img src="{{s.img2}}" alt="{{s.alt2}}" style="grid-column: span 2; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: {{s.pos2}}; border-radius: 30px; border: 6px solid #FFFFFF; box-sizing: border-box; display: block; box-shadow: 0 18px 44px rgba(23, 50, 77, 0.1)">
+        </div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+      <div style="display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: 20px; background: #FFFFFF">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"></path></svg>
+        <span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-size: 13px; font-weight: 800; color: #4A5D70; text-transform: uppercase; letter-spacing: 0.06em">For</span><span style="font-weight: 800">{{s.forWho}}</span></span>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: 20px; background: #FFFFFF">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-size: 13px; font-weight: 800; color: #4A5D70; text-transform: uppercase; letter-spacing: 0.06em">Where</span><span style="font-weight: 800">CUMC &amp; Maria Reyna–XU</span></span>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: 20px; background: #FFFFFF">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+        <span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-size: 13px; font-weight: 800; color: #4A5D70; text-transform: uppercase; letter-spacing: 0.06em">Book</span><span style="font-weight: 800">By phone with the secretary</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">How it works</span>
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">How It Works</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+        <sc-for list="{{covers}}" as="c" hint-placeholder-count="5">
+          <li style="display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 18px; border: 1px solid #E1ECEE; background: #FFFFFF">
+            <span style="{{c.dot}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="font-size: 18px; font-weight: 800; line-height: 1.3">{{c.t}}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+    <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <img src="{{s.img3}}" alt="{{s.alt3}}" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: {{s.pos3}}; border-radius: 32px; display: block">
+      <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #3F5368">{{s.expectIntro}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED FAQS -->
+<section style="background: #F7FBFB; padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Related questions</span>
+      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 800">Frequently Asked Questions</h2>
+      <p style="margin: 0; color: #3F5368">{{s.faqSub}}</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <sc-for list="{{s.faqs}}" as="f" hint-placeholder-count="4">
+        <details style="border-radius: 20px; border: 1px solid #DCEAEC; background: #FFFFFF">
+          <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; min-height: 44px; font-weight: 800; font-size: 18px">{{f.q}}<svg class="dv-chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D7A80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; transition: transform 0.2s"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+          <p style="margin: 0; padding: 0 24px 22px; color: #3F5368">{{f.a}}</p>
+        </details>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK CTA + OTHER SERVICES -->
+<section style="padding: clamp(64px, 8vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px">
+    <div style="position: relative; overflow: hidden; border-radius: 36px; background: #0D7A80; color: #FFFFFF; padding: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+      <div aria-hidden="true" style="position: absolute; width: 240px; height: 240px; border-radius: 50%; background: #13878D; right: -60px; top: -90px"></div>
+      <div style="position: relative; flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.15; font-weight: 800">Book an Appointment</h2>
+        <p style="margin: 0; font-size: 18px; color: #E3F4F3">Call the clinic secretary to schedule your child’s visit with Dr. Vira.</p>
+      </div>
+      <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="Book.dc.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #FFFFFF; color: #0A5F64; font-weight: 800; text-decoration: none">See clinics &amp; schedules</a>
+        <a href="tel:+639274286149" style="display: inline-flex; align-items: center; gap: 8px; min-height: 56px; padding: 0 24px; border-radius: 999px; border: 2px solid #FFFFFF; color: #FFFFFF; font-weight: 800; text-decoration: none">Call 0927 428 6149</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <h2 style="margin: 0; font-size: 24px; font-weight: 800">Related services</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
+        <sc-for list="{{s.related}}" as="o" hint-placeholder-count="2">
+          <a href="{{o.href}}" style="display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 26px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D">
+            <span style="font-size: 20px; font-weight: 800; line-height: 1.3">{{o.title}}</span>
+            <span style="font-size: 16px; color: #4A5D70">{{o.desc}}</span>
+            <span style="margin-top: 4px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,640px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"service":{"editor":"enum","options":["newborn","wellbaby","vaccines","illness","highrisk"],"default":"newborn"},"$preview":{"width":1440,"height":3700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const B = (p) => p;
+    const IMG = {
+      nicu: 'images/vira-nicu.webp', measure: 'images/newborn-measure-n.webp',
+      blanket: 'images/baby-blanket-n.webp', exam: 'images/vira-exam-baby.webp',
+      girl: 'images/girl-vaccine-n.webp', shot: 'images/baby-injection-n.webp',
+      fever: 'images/child-fever-n.webp', desk: 'images/vira-desk-family.webp',
+      bassinet: 'images/newborn-bassinet-n.webp', play: 'images/mom-baby-play-n.webp',
+      arm: 'images/vaccine-arm.webp', momchild: 'images/fever-mom-child.webp'
+    };
+    const S = {
+      newborn: {
+        title: 'Newborn & Neonatal Care', href: 'Service.dc.html',
+        headline: 'Expert Care From Your Baby’s First Day',
+        intro1: 'The first days and weeks of life call for careful, specialized attention. As a board-certified neonatologist, Dr. Vira provides comprehensive newborn care — including for premature and high-risk infants — so parents can feel confident their baby is in capable hands from day one.',
+        intro2: 'Every newborn is assessed individually, with close attention to feeding, weight gain, and early signs that may need follow-up. For infants who need extra support, Dr. Vira coordinates closely with hospital staff to ensure continuity of care.',
+        bookLabel: 'Book an Appointment', forWho: 'Newborns & premature babies',
+        img1: IMG.nicu, alt1: 'Dr. Vira in protective gear holding a newborn in the NICU', pos1: 'center 30%',
+        img2: IMG.measure, alt2: 'A newborn’s head being measured with a tape measure', pos2: '40% center',
+        img3: IMG.bassinet, alt3: 'A newborn resting in a hospital bassinet', pos3: 'center 45%',
+        covers: ['Initial newborn health assessment', 'Feeding & weight gain monitoring', 'Premature infant care planning', 'Coordination with hospital care teams', 'Parent guidance for the first weeks home'],
+        expectIntro: 'Dr. Vira works closely with parents from the very first visit, explaining what to expect and what to watch for as your baby grows. For premature or high-risk newborns, this includes a more structured monitoring plan tailored to your baby’s specific needs, developed in coordination with the hospital’s neonatal team.',
+        faqSub: 'A few common questions parents ask about newborn care.',
+        faqs: [
+          { q: 'When should I bring my newborn for their first checkup?', a: 'Most newborns should be seen within the first week after birth, though Dr. Vira may recommend an earlier visit for premature or high-risk infants.' },
+          { q: 'What happens during a newborn’s first exam?', a: 'Dr. Vira checks your baby’s overall health, weight, feeding, and reflexes, and discusses any concerns from the delivery or hospital stay.' },
+          { q: 'My baby was born premature — does this service apply?', a: 'Yes — this is one of Dr. Vira’s specific areas of expertise as a board-certified neonatologist.' },
+          { q: 'How often will my newborn need to be seen after the first visit?', a: 'Generally every few weeks during the first couple of months, then less frequently as your baby grows, more often if your baby was premature or needs closer monitoring.' }
+        ],
+        related: [{"title": "Child Vaccinations", "desc": "Complete immunization schedules to protect your child against preventable diseases.", "href": "ServiceVaccines.dc.html"}, {"title": "Well-Baby & Growth Monitoring", "desc": "Regular checkups tracking your child’s growth, weight, and developmental milestones.", "href": "ServiceWellBaby.dc.html"}]
+      },
+      wellbaby: {
+        title: 'Well-Baby & Growth Monitoring', href: 'ServiceWellBaby.dc.html',
+        headline: 'Tracking Your Child’s Growth, Every Step of the Way',
+        intro1: 'Regular well-baby visits are one of the most effective ways to catch health concerns early. Dr. Vira monitors your child’s weight, height, and developmental milestones at each stage, giving you clear guidance on what’s typical and what’s worth watching.',
+        intro2: 'These checkups also give parents a chance to ask questions about feeding, sleep, and everyday care — no concern is too small to bring up.',
+        bookLabel: 'Book an Appointment', forWho: 'Babies & growing children',
+        img1: IMG.blanket, alt1: 'A smiling baby lying on a soft white blanket', pos1: '75% center',
+        img2: IMG.exam, alt2: 'Dr. Vira checking a baby with a stethoscope', pos2: 'center 30%',
+        img3: IMG.play, alt3: 'A mother playing with stacking toys with her baby', pos3: 'center 45%',
+        covers: ['Scheduled growth checkups by age', 'Developmental milestone review', 'Nutrition & feeding guidance', 'Early concern identification', 'Ongoing health record tracking'],
+        expectIntro: 'Because Dr. Vira sees your child consistently over time, she’s able to notice subtle patterns in growth or development that might be missed in a one-off visit. Each checkup builds on the last, giving a clearer picture of your child’s overall health as they grow.',
+        faqSub: 'Common questions about well-baby visits and growth checkups.',
+        faqs: [
+          { q: 'How often should my child have a well-baby checkup?', a: 'Typically monthly during the first six months, then every two to three months through the first year, and about once or twice a year after that as your child grows.' },
+          { q: 'What does Dr. Vira check during a growth monitoring visit?', a: 'Weight, height, and developmental milestones appropriate to your child’s age, along with any concerns you’d like to raise.' },
+          { q: 'What if my child isn’t meeting a developmental milestone?', a: 'Dr. Vira will discuss this with you directly and recommend next steps, which may include closer monitoring or referral if needed.' },
+          { q: 'Can I ask about feeding or sleep concerns during this visit?', a: 'Yes, well-baby visits are a good time to bring up any everyday care questions, not just growth measurements.' }
+        ],
+        related: [{"title": "Newborn & Neonatal Care", "desc": "Specialized care for newborns, including premature and high-risk infants, from their first days of life.", "href": "Service.dc.html"}, {"title": "Child Vaccinations", "desc": "Complete immunization schedules to protect your child against preventable diseases.", "href": "ServiceVaccines.dc.html"}]
+      },
+      vaccines: {
+        title: 'Child Vaccinations & Immunization', href: 'ServiceVaccines.dc.html',
+        headline: 'Protecting Your Child Against Preventable Diseases',
+        intro1: 'Vaccinations are one of the most effective ways to protect your child’s health. Dr. Vira provides complete childhood immunizations, following recommended vaccination schedules and taking time to explain each vaccine’s purpose and timing.',
+        intro2: 'Parents are welcome to ask questions about vaccine safety, timing, or catch-up schedules — Dr. Vira ensures you understand exactly what your child is receiving and why.',
+        bookLabel: 'Book an Appointment', forWho: 'Babies, toddlers & children',
+        img1: IMG.girl, alt1: 'A little girl smiling at the bandage on her arm after a vaccine', pos1: 'center 30%',
+        img2: IMG.shot, alt2: 'A baby receiving a vaccine while held by a parent', pos2: '30% center',
+        img3: IMG.arm, alt3: 'A baby receiving a vaccine in the upper arm', pos3: '55% center',
+        covers: ['Vaccination schedule review by age', 'Vaccine administration', 'Post-vaccination guidance', 'Immunization record keeping', 'Catch-up schedule planning if needed'],
+        expectIntro: 'Every child’s vaccination history is tracked carefully, so you always know what’s been given and what’s coming up next. If your child has missed a scheduled vaccine, Dr. Vira can help plan a catch-up schedule to get back on track.',
+        faqSub: 'Common questions parents ask about vaccinations.',
+        faqs: [
+          { q: 'What vaccines will my child need, and when?', a: 'Dr. Vira follows the recommended childhood immunization schedule and will walk you through exactly what’s due at each visit.' },
+          { q: 'Is it safe to catch up on missed vaccines?', a: 'Yes, Dr. Vira can help plan a safe catch-up schedule if your child has missed any scheduled vaccinations.' },
+          { q: 'What side effects should I watch for after a vaccine?', a: 'Dr. Vira will explain what’s normal (like mild fever or soreness) and what would warrant a follow-up call after each vaccination.' },
+          { q: 'Do you keep a record of my child’s immunizations?', a: 'Yes, your child’s immunization history is tracked at each visit so you always have an up-to-date record.' }
+        ],
+        related: [{"title": "Newborn & Neonatal Care", "desc": "Specialized care for newborns, including premature and high-risk infants, from their first days of life.", "href": "Service.dc.html"}, {"title": "Well-Baby & Growth Monitoring", "desc": "Regular checkups tracking your child’s growth, weight, and developmental milestones.", "href": "ServiceWellBaby.dc.html"}]
+      },
+      illness: {
+        title: 'Common Childhood Illnesses', href: 'ServiceIllnesses.dc.html',
+        headline: 'Careful Care When Your Child Isn’t Feeling Well',
+        intro1: 'From fevers to common infections, childhood illnesses can be worrying for any parent. Dr. Vira provides thorough evaluation and treatment for everyday pediatric health concerns, helping your child recover while keeping you informed at every step.',
+        intro2: 'Follow-up care ensures recovery stays on track, and Dr. Vira is clear about what warrants a return visit versus what can be managed at home.',
+        bookLabel: 'Book an Appointment', forWho: 'Babies & children who are unwell',
+        img1: IMG.fever, alt1: 'A parent feeling a sick child’s forehead for fever', pos1: '45% center',
+        img2: IMG.desk, alt2: 'Dr. Vira at her clinic desk with a family and their baby', pos2: 'center 35%',
+        img3: IMG.momchild, alt3: 'A mother checking her son’s temperature as he rests in bed', pos3: 'center 45%',
+        covers: ['Symptom evaluation and diagnosis', 'Age-appropriate treatment planning', 'Home care guidance', 'Follow-up monitoring', 'Clear guidance on when to return'],
+        expectIntro: 'Dr. Vira takes time to explain what’s causing your child’s symptoms and what to expect during recovery, so you’re never left guessing. If a follow-up visit is needed, she’ll let you know exactly what to watch for in the meantime.',
+        faqSub: 'Common questions about childhood illness visits.',
+        faqs: [
+          { q: 'When should I bring my child in for a fever or illness?', a: 'If your child has a high fever, seems unusually weak or hard to wake, is having trouble breathing, or isn’t keeping fluids down, bring them in right away. For a mild fever or cold without these signs, home care for a day or two is usually fine before scheduling a visit.' },
+          { q: 'Do you treat common infections like colds, flu, or ear infections?', a: 'Yes, Dr. Vira evaluates and treats common childhood illnesses and infections as part of routine care.' },
+          { q: 'What if my child doesn’t improve after treatment?', a: 'Dr. Vira will schedule a follow-up visit and adjust the treatment plan as needed.' },
+          { q: 'Can I call the clinic with questions between visits?', a: 'For non-urgent questions between visits, feel free to reach out to the clinic, and a staff member will assist you or pass your message along to Dr. Vira. For urgent concerns, please head to the nearest emergency room right away.' }
+        ],
+        related: [{"title": "Well-Baby & Growth Monitoring", "desc": "Regular checkups tracking your child’s growth, weight, and developmental milestones.", "href": "ServiceWellBaby.dc.html"}, {"title": "Child Vaccinations", "desc": "Complete immunization schedules to protect your child against preventable diseases.", "href": "ServiceVaccines.dc.html"}]
+      },
+      highrisk: {
+        title: 'High-Risk Infant Follow-up', href: 'ServiceHighRisk.dc.html',
+        headline: 'Continued Care for Babies Who Needed Extra Support',
+        intro1: 'Infants who required NICU admission or special newborn care often need continued, specialized monitoring after leaving the hospital. Dr. Vira provides ongoing follow-up for high-risk infants, tracking their growth and development closely during this critical period.',
+        intro2: 'Her neonatology background means this follow-up care is grounded in the same expertise that guided your baby’s initial hospital care, not a generic pediatric checkup.',
+        bookLabel: 'Book an Appointment', forWho: 'NICU graduates & high-risk babies',
+        img1: IMG.nicu, alt1: 'Dr. Vira in protective gear holding a newborn in the NICU', pos1: 'center 30%',
+        img2: IMG.bassinet, alt2: 'A newborn resting in a hospital bassinet', pos2: '45% center',
+        img3: IMG.measure, alt3: 'A newborn’s head being measured with a tape measure', pos3: '40% center',
+        covers: ['Review of NICU/hospital history', 'Ongoing growth & development monitoring', 'Coordination with prior care teams', 'Early concern identification', 'Parent support & guidance'],
+        expectIntro: 'High-risk infants often follow a different growth and development timeline than other babies, and Dr. Vira accounts for this in every follow-up visit. She coordinates with your baby’s prior hospital records to ensure continuity of care as you transition from hospital to home.',
+        faqSub: 'Common questions about high-risk infant follow-up care.',
+        faqs: [
+          { q: 'My baby had a NICU stay, when should follow-up care start?', a: 'Typically within one to two weeks after hospital discharge, or sooner if your baby was very premature or had complications during their NICU stay.' },
+          { q: 'Will Dr. Vira coordinate with the hospital that treated my baby?', a: 'Yes, she reviews prior hospital records and NICU history to ensure continuity of care.' },
+          { q: 'How is high-risk follow-up different from a regular well-baby visit?', a: 'These visits track growth and development against milestones appropriate for high-risk infants, with closer monitoring than a standard checkup.' },
+          { q: 'How long does high-risk follow-up typically continue?', a: 'It commonly continues through the first one to two years of life, since growth and development are tracked more closely during this period, though this can vary based on your baby’s specific condition.' }
+        ],
+        related: [{"title": "Newborn & Neonatal Care", "desc": "Specialized care for newborns, including premature and high-risk infants, from their first days of life.", "href": "Service.dc.html"}, {"title": "Well-Baby & Growth Monitoring", "desc": "Regular checkups tracking your child’s growth, weight, and developmental milestones.", "href": "ServiceWellBaby.dc.html"}]
+      }
+    };
+    const key = S[this.props.service] ? this.props.service : 'newborn';
+    const s = S[key];
+    const tints = ['background: #E6F4F3; color: #0D7A80;', 'background: #FFF1EA; color: #B4492F;', 'background: #EAF3FB; color: #1F5F8F;'];
+    return {
+      s,
+      covers: s.covers.map((t, i) => ({ t, dot: 'width: 36px; height: 36px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; ' + tints[i % 3] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

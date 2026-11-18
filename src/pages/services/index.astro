@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageTitle from '../../components/PageTitle.astro';
+---
+<BaseLayout
+  title="Services — Dr. Vira Bolok, MD"
+  description="Newborn and neonatal care, well-baby checkups, vaccinations, common childhood illnesses and high-risk infant follow-up with Dr. Vira Bolok in Cagayan de Oro."
+  active="services"
+>
+<PageTitle title="Services" />
+
+<!-- OUR SERVICES -->
+<section style="padding: clamp(56px, 7vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Our Services</span>
+      <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; font-weight: 800">Complete Care From Newborn to Childhood</h2>
+      <p style="margin: 0; color: #3F5368">Dr. Vira provides comprehensive pediatric and neonatal care, focused on your child’s healthy growth at every stage.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+      <a href="/services/newborn-neonatal-care/" style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+        <img loading="lazy" src="/images/newborn-bassinet-n.webp" alt="A newborn resting in a hospital bassinet" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 45%; border-radius: 20px; display: block">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">Newborn &amp; Neonatal Care</span>
+        <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">Specialized care for newborns, including premature and high-risk infants, from their first days of life.</span>
+        <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+      </a>
+      <a href="/services/well-baby-growth-monitoring/" style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+        <img loading="lazy" src="/images/baby-blanket-n.webp" alt="A smiling baby lying on a soft white blanket" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 50%; border-radius: 20px; display: block">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">Well-Baby &amp; Growth Monitoring</span>
+        <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">Regular checkups tracking your child’s growth, weight, and developmental milestones.</span>
+        <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+      </a>
+      <a href="/services/child-vaccinations/" style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+        <img loading="lazy" src="/images/girl-vaccine-n.webp" alt="A little girl smiling at the bandage on her arm after a vaccine" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 35%; border-radius: 20px; display: block">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">Child Vaccinations</span>
+        <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">Complete immunization schedules to protect your child against preventable diseases.</span>
+        <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+      </a>
+      <a href="/services/common-childhood-illnesses/" style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+        <img loading="lazy" src="/images/fever-mom-child.webp" alt="A mother checking her son’s temperature as he rests in bed" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 45%; border-radius: 20px; display: block">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">Common Childhood Illnesses</span>
+        <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">Diagnosis and treatment for everyday pediatric health concerns, from fevers to common infections.</span>
+        <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+      </a>
+      <a href="/services/high-risk-infant-follow-up/" style="display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 26px; border-radius: 28px; border: 1px solid #E1ECEE; background: #FFFFFF; text-decoration: none; color: #17324D; box-shadow: 0 6px 20px rgba(23, 50, 77, 0.04)">
+        <img loading="lazy" src="/images/vira-nicu.webp" alt="Dr. Vira holding a newborn in the NICU" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 35%; border-radius: 20px; display: block">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.25; padding: 0 14px">High-Risk Infant Follow-up</span>
+        <span style="font-size: 16px; color: #4A5D70; padding: 0 14px">Ongoing monitoring and care for infants who required NICU or special newborn care.</span>
+        <span style="margin-top: auto; padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: #0D7A80; font-size: 16px">Read More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MAKE AN APPOINTMENT -->
+<section style="background: #F2F9F8; padding: clamp(56px, 7vw, 96px) 0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #B4492F">Booking Now</span>
+      <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; font-weight: 800">Make An Appointment</h2>
+      <p style="margin: 0; color: #3F5368">Choose the clinic location and schedule most convenient for your family, then contact the clinic secretary to book your visit.</p>
+      <a href="/book/" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #0D7A80; color: #FFFFFF; font-weight: 800; text-decoration: none">Book an Appointment</a>
+    </div>
+    <div style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 24px; background: #FFFFFF">
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.3">Capitol University Medical Center</span>
+        <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 15px"><span style="font-weight: 800">Mon, Tue, Thu, Fri</span><span style="color: #3F5368">9:00 AM – 12:00 PM</span></div>
+        <a href="tel:+639274286149" style="display: inline-flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 999px; background: #E6F4F3; color: #0A5F64; font-weight: 800; text-decoration: none">CUMC · 0927 428 6149</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 24px; background: #FFFFFF">
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.3">Maria Reyna – Xavier University Hospital</span>
+        <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 15px"><span style="font-weight: 800">Tue &amp; Thu</span><span style="color: #3F5368">3:00 PM – 5:00 PM</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 15px"><span style="font-weight: 800">Fri</span><span style="color: #3F5368">1:00 PM – 5:00 PM</span></div>
+        <a href="tel:+639352894650" style="display: inline-flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 999px; background: #E6F4F3; color: #0A5F64; font-weight: 800; text-decoration: none">Maria Reyna · 0935 289 4650</a>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>
