@@ -75,31 +75,6 @@ details[open] .dv-chev{transform:rotate(180deg)}
   </div>
 </section>
 
-<section style="background: #F7FBFB; padding: clamp(56px, 7vw, 88px) 0">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px">
-    <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
-      <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; font-weight: 800">Send a message</h2>
-      <p style="margin: 0; color: #3F5368">For general questions only. This form doesn’t reserve an appointment. To book, please call or text the clinic.</p>
-    </div>
-    <form onSubmit="{{submit}}" style="flex: 2 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 32px; border-radius: 32px; background: #FFFFFF; border: 1px solid #E1ECEE">
-      <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Parent’s name
-        <input type="text" name="name" autocomplete="name" required style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D">
-      </label>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Mobile number
-        <input type="tel" name="phone" autocomplete="tel" required placeholder="09XX XXX XXXX" style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D">
-      </label>
-      <label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 15px">Your message
-        <textarea name="message" rows="5" required style="padding: 14px 16px; border-radius: 14px; border: 1.5px solid #B9CDD1; font: inherit; font-weight: 600; font-size: 17px; color: #17324D; resize: vertical"></textarea>
-      </label>
-      <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
-        <button type="submit" style="min-height: 56px; padding: 0 30px; border-radius: 999px; border: none; background: #0D7A80; color: #FFFFFF; font: inherit; font-weight: 800; font-size: 17px; cursor: pointer">Send message</button>
-        <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
-          <span role="status" style="font-weight: 800; color: #0A5F64">Thank you! The clinic will get back to you.</span>
-        </sc-if>
-      </div>
-    </form>
-  </div>
-</section>
 </main>
 
 <dc-import name="Footer" hint-size="100%,640px"></dc-import>
@@ -107,14 +82,8 @@ details[open] .dv-chev{transform:rotate(180deg)}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
 class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.state = { sent: false };
-  }
   renderVals() {
     return {
-      sent: this.state.sent,
-      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
       clinics: [
         { name: 'Capitol University Medical Center', address: 'Room 206B, Gusa Highway, Cagayan de Oro City', rows: [{ days: 'Mon, Tue, Thu, Fri', time: '9:00 AM – 12:00 PM' }], phone: '0927 428 6149', tel: 'tel:+639274286149', sms: 'sms:+639274286149', map: 'https://www.google.com/maps/search/?api=1&query=Capitol+University+Medical+Center+Cagayan+de+Oro' },
         { name: 'Maria Reyna–Xavier University Hospital', address: 'Room 547, Cagayan de Oro City', rows: [{ days: 'Tue & Thu', time: '3:00 – 5:00 PM' }, { days: 'Fri', time: '1:00 – 5:00 PM' }], phone: '0935 289 4650', tel: 'tel:+639352894650', sms: 'sms:+639352894650', map: 'https://www.google.com/maps/search/?api=1&query=Maria+Reyna+Xavier+University+Hospital+Cagayan+de+Oro' }

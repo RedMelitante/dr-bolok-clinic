@@ -1,5 +1,5 @@
 Dr. Vira Bolok, MD — Website Redesign (design source files)
-Exported from Claude Design on 18 November 2026
+Exported from Claude Design on 18 November 2026 (updated 12:11 PM)
 
 WHAT'S INSIDE
 - 34 page files (*.dc.html): desktop pages, phone (Mobile*) versions, and shared Header/Footer
@@ -33,4 +33,4 @@ STILL TO CONFIRM
 - Dr. Vira's role at Madonna and Child Medical Center (About page placeholder)
 - The "231+ Safe Observation" number
 - Licence/source for 3 photos taken from the old site
-- Forms (Book, Contact) show a thank-you message only; connect them in Astro
+- The Book and Contact pages have no forms; visitors call or text the clinic
