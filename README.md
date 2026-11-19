@@ -52,7 +52,7 @@ src/
   layouts/BaseLayout.astro   <head>/SEO, header, footer
   components/        Header, Footer, PageTitle, FaqList, StatCards
   pages/             one file per route (+ [slug] templates for services and posts)
-  scripts/           book-picker.ts (clinic availability checker)
+  scripts/           booking.ts (online appointment booking widget)
   styles/global.css  global rules from the design's <helmet> + hover/toggle states
 design/              original Claude Design source files (reference only, not built)
 ```
@@ -71,8 +71,20 @@ Copy `.env.example` to `.env` (or set it in your host's build settings):
 - `SITE_URL` — the site's absolute URL (e.g. `https://www.example.com`). Enables canonical
   and absolute Open Graph URLs.
 
-The site has no forms: as in the design, visitors book or ask questions by calling or texting
-the clinic secretary.
+## Online booking
+
+The Book page's "Book an Appointment" card (`src/scripts/booking.ts`) is a port of the booking
+form from the previous WordPress site (drbolok.com/book-now/, plugin "dental-booking"). It uses
+the **same Google Apps Script backend** (`bookingBackendUrl` in `src/data/site.ts`) with the same
+requests and payload, so appointment requests keep landing in the clinic's existing calendar
+setup. Only the look changed to match this design.
+
+Flow: choose a clinic → pick a date → pick an available time → enter name, phone and an optional
+note → request. Clinic list, schedules and time slots come live from the backend.
+
+The Google Apps Script deployment must stay live (and keep its current URL) for booking to
+work; the old WordPress site itself can be retired without affecting it. If the script is ever
+redeployed under a new URL, update `bookingBackendUrl`.
 
 ## Still to confirm with the client
 
