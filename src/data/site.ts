@@ -19,6 +19,14 @@ export const routes = {
   postMilestones: '/blog/developmental-milestones-first-year/',
 } as const;
 
+/**
+ * Google Apps Script backend that receives appointment requests and keeps the
+ * clinic calendar in sync. It is the same backend the previous WordPress site
+ * (drbolok.com/book-now/) used, so nothing changes on the clinic's side.
+ */
+export const bookingBackendUrl =
+  'https://script.google.com/macros/s/AKfycbzJm63YRzBnxGSZLdomLGyw-MRwfrnUO8_JJNehyddPHpojtgYUsaEmsAeMf68e3Q3b/exec';
+
 export type NavId = 'home' | 'about' | 'services' | 'book' | 'faq' | 'blog' | 'contact' | '';
 
 export const phones = {

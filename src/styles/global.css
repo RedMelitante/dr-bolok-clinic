@@ -72,13 +72,11 @@ details[open] .dv-chev{transform:rotate(180deg)}
 .dv-svc{background:#FFFFFF;border:1px solid transparent;box-shadow:none;transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s}
 .dv-svc:hover,.dv-svc:focus{border-color:#EEF3F5;box-shadow:0 14px 36px rgba(23, 50, 77, 0.10);transform:translateY(-3px)}
 
-/* Blog: topic filter chips */
+/* Blog topic filter chips + Book time-slot buttons */
 .dv-chip{background:#FFFFFF;color:#17324D;border:2px solid #D5E5E7}
+.dv-chip:hover{border-color:#0D7A80}
 .dv-chip[aria-pressed="true"]{background:#0D7A80;color:#FFFFFF;border:2px solid #0D7A80}
 
-/* Book: availability result */
-.dv-result-ok{background:#E6F4F3;color:#0A5F64}
-.dv-result-no{background:#FFF1EA;color:#8C3F2B}
 
 @media (prefers-reduced-motion: reduce){
   .dv-svc,.dv-dd-item,.dv-chev,.dv-chev-btn{transition:none !important}
